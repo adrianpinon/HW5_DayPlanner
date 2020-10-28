@@ -21,7 +21,8 @@ let id = function setPlanner() {
         console.log(setPlanner)
         //added console.log just to make sure if this is gonna work//
     $("#currentDay").text(moment().format("dddd, MMMM, YYYY"));
-        
+        //added console.log to the moment()//
+            console.log(moment())
     $(".time-block").each(function () {
         let id = $(this).attr("id");
         let schedule = localStorage.getItem(id);
@@ -34,9 +35,9 @@ let id = function setPlanner() {
 
 setPlanner();
 let saveBtn = $(".saveBtn");
-        console.log(saveBtn)
+        console.log("is this one working" + saveBtn)
        //added console.log just to see if something would appear// 
-    saveBtn.on("click", function () {
+        saveBtn.on("click", function () {
         let time = $(this).parent().attr("id");
         let schedule = $(this).siblings("schedule").val();
 
@@ -49,13 +50,15 @@ function pastPresentFuture() {
     $(".time-block").each(function () {
         let thisHour = parseInt($(this).attr("id"));
 
-        if (thisHour) hour; {
+        switch (thisHour); {
             $(this).addClass("future");
         }    
-        else if (thisHour === hour) {
+        //else if// 
+         {
             $(this).addClass("today");
         }
-        else {
+        //else// 
+        {
             $(this).addClass("past");
         }
     });
