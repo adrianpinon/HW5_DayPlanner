@@ -1,26 +1,7 @@
-let hours = [
-  "9, 10 , 11, 12, 1, 2, 3, 4, 5"
-];
-let classEL = $("hour");
-
-
-//let hour9 = $("#9");
-//let hour10 = $("#10");
-//let hour11 = $("#11");
-//let hour12 = $("#12");
-//let hour1 = $("#13");
-//let hour2 = $("#14");
-//let hour3 = $("#15");
-//let hour4 = $("#16");
-//let hour5 = $("#17");
-//let time = moment();
-
-
-
 let id = function setPlanner() {
         console.log(setPlanner)
         //added console.log just to make sure if this is gonna work//
-    $("#currentDay").text(moment().format("dddd, MMMM, YYYY"));
+    $("#currentDay").text(moment().format("dddd, MMMM, YYYY", "mm", "ss"));
         //added console.log to the moment()//
             console.log(moment())
     $(".time-block").each(function () {
@@ -49,17 +30,19 @@ function pastPresentFuture() {
     hour = time.hours();
     $(".time-block").each(function () {
         let thisHour = parseInt($(this).attr("id"));
+                    //removed "switch" because if/else statments are easier. Note to self: don't get to fancy//
+                    //also tutor said ">" this would make better sense//
 
-        switch (thisHour); {
-            $(this).addClass("future");
+        if (thisHour > hour) {
+            $(this).addClass("future")
         }    
-        //else if// 
+        else if
          {
-            $(this).addClass("today");
+            $(this).addClass("present")
         }
-        //else// 
+        else
         {
-            $(this).addClass("past");
+            $(this).addClass("past")
         }
     });
 
