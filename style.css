@@ -5,7 +5,7 @@ body {
 }
 
 textarea{
-/* added text-align because it looks better*/
+/* added "text-align:center" because it looks better*/
   text-align: center;
   background: transparent;
   border: none;
